@@ -7,3 +7,8 @@ class BookSerializer(serializers.Serializer):
     author = serializers.CharField(required=True, max_length=100)
     publish = serializers.CharField(required=True, max_length=100)
     rate = serializers.FloatField(default=0)
+
+class BookModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = "__all__"
